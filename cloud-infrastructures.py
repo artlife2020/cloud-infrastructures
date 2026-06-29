@@ -55,3 +55,22 @@ def workflow():
 
     contract.add_event("verified")
     return contract
+
+def audit(contract):
+    print("\nAudit Trail:")
+    for e in contract.events:
+        print(e)
+
+def summary(contract):
+    print("\nSummary Report")
+    print("Owner:", contract.owner)
+    print("Partner:", contract.partner)
+
+def main():
+    c = workflow()
+    audit(c)
+    summary(c)
+    print("Execution completed")
+
+if __name__ == "__main__":
+    main()
